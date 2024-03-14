@@ -1,0 +1,18 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install react react-dom next
+      - run: npx next build
+  start:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - run: npx next start --port 3001
