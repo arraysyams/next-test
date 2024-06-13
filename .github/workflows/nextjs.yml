@@ -85,6 +85,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      WEBSITE_ROOT: ${{secrets.WEBSITE_ROOT}}
     runs-on: ubuntu-latest
     needs: build
     steps:
