@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Home",
+};
 
 export default function Home() {
   const rootURL = process.env.WEBSITE_ROOT;

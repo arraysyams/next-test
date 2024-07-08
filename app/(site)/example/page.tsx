@@ -1,6 +1,12 @@
 import Image from "next/image";
+import { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Example",
+  description: "Example",
+};
+
+export default function Example() {
   const rootURL = process.env.WEBSITE_ROOT;
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
