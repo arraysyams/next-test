@@ -1,0 +1,27 @@
+export const items = [
+  {
+    id: 1,
+    name: "Pizza",
+    category: 1,
+  },
+  {
+    id: 2,
+    name: "Chips",
+    category: 1,
+  },
+  {
+    id: 3,
+    name: "Pan",
+    category: 2,
+  },
+  {
+    id: 5,
+    name: "Spatula",
+    category: 2,
+  },
+  {
+    id: 4,
+    name: "Bowl",
+    category: 2,
+  },
+];

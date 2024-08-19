@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { JSONFilePreset } from "lowdb/node";
+import { categories } from "./categories";
+import { items } from "./items";
+// import { JSONFilePreset } from "lowdb/node";
 
 export const metadata: Metadata = {
-  title: "Low DB",
-  description: "Low DB Example",
+  title: "Low DB Alternative",
+  description: "Basically, it's that same json file but converted to JS variable",
 };
 
 export type Category = {
@@ -17,23 +19,23 @@ export type Item = {
   category: number;
 };
 
-async function listCategories() {
-  "use server";
-  const db = await JSONFilePreset("categories.json", { categories: [] as Category[] });
-  const { categories } = db.data;
-  return categories;
-}
+// async function listCategories() {
+//   "use server";
+//   const db = await JSONFilePreset("categories.json", { categories: [] as Category[] });
+//   const { categories } = db.data;
+//   return categories;
+// }
 
-async function listItems() {
-  "use server";
-  const db = await JSONFilePreset("items.json", { items: [] as Item[] });
-  const { items } = db.data;
-  return items;
-}
+// async function listItems() {
+//   "use server";
+//   const db = await JSONFilePreset("items.json", { items: [] as Item[] });
+//   const { items } = db.data;
+//   return items;
+// }
 
 export default async function LowDBDemo() {
-  const categories = await listCategories();
-  const items = await listItems();
+  // const categories = await listCategories();
+  // const items = await listItems();
   return (
     <div className="w-dvw h-dvh p-2 flex flex-col items-center">
       <div className="py-2">Example</div>
