@@ -34,7 +34,6 @@ export type Item = {
 // }
 
 async function getJSON(url: string) {
-  console.log(url);
   const res = await fetch(url);
   const json = await res.json();
   return json;
@@ -42,15 +41,15 @@ async function getJSON(url: string) {
 
 export default async function LowDBDemo() {
   const rootURL = process.env.WEBSITE_ROOT;
-  const { categories }: { categories: Category[] } = await getJSON(`${rootURL}/categories.json`);
-  const { items }: { items: Item[] } = await getJSON(`${rootURL}/items.json`);
+  // const { categories }: { categories: Category[] } = await getJSON(`${rootURL}/categories.json`);
+  // const { items }: { items: Item[] } = await getJSON(`${rootURL}/items.json`);
   // const categories = await listCategories();
   // const items = await listItems();
 
   return (
     <div className="w-dvw h-dvh p-2 flex flex-col items-center">
       <div className="py-2">Example</div>
-      {categories.map((category, keyCategory) => (
+      {/* {categories.map((category, keyCategory) => (
         <div key={keyCategory} className="bg-stone-200 dark:bg-stone-800 p-2 my-2">
           <h1 className="font-bold">{category.name}</h1>
           <ul className="list-disc list-inside">
@@ -61,7 +60,7 @@ export default async function LowDBDemo() {
               ))}
           </ul>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
