@@ -7,6 +7,10 @@
     {
       "id": 2,
       "name": "Utensils"
+    },
+    {
+      "id": 3,
+      "name": "Hygienes"
     }
   ]
 }

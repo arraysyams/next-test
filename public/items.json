@@ -12,7 +12,7 @@
     },
     {
       "id": 3,
-      "name": "Pan",
+      "name": "Frying Pan",
       "category": 2
     },
     {
@@ -24,6 +24,16 @@
       "id": 4,
       "name": "Bowl",
       "category": 2
+    },
+    {
+      "id": 6,
+      "name": "Soap",
+      "category": 3
+    },
+    {
+      "id": 7,
+      "name": "Toothpaste",
+      "category": 3
     }
   ]
 }
