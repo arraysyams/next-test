@@ -34,6 +34,7 @@ export type Item = {
 // }
 
 async function getJSON(url: string) {
+  console.log(url);
   const res = await fetch(url);
   const json = await res.json();
   return json;
