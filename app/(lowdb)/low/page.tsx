@@ -1,11 +1,11 @@
 import { Metadata } from "next";
-import { categories } from "./categories";
-import { items } from "./items";
+// import { categories } from "./categories";
+// import { items } from "./items";
 // import { JSONFilePreset } from "lowdb/node";
 
 export const metadata: Metadata = {
-  title: "Low DB Alternative",
-  description: "Basically, it's that same json file but converted to JS variable",
+  title: "Low DB Alternative 2",
+  description: "Basically, it's that same json file but hosted in public folder",
 };
 
 export type Category = {
@@ -33,9 +33,19 @@ export type Item = {
 //   return items;
 // }
 
+async function getJSON(url: string) {
+  const res = await fetch(url);
+  const json = await res.json();
+  return json;
+}
+
 export default async function LowDBDemo() {
+  const rootURL = process.env.WEBSITE_ROOT;
+  const { categories }: { categories: Category[] } = await getJSON(`${rootURL}/categories.json`);
+  const { items }: { items: Item[] } = await getJSON(`${rootURL}/items.json`);
   // const categories = await listCategories();
   // const items = await listItems();
+
   return (
     <div className="w-dvw h-dvh p-2 flex flex-col items-center">
       <div className="py-2">Example</div>
